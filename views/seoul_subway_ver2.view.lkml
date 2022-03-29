@@ -9,6 +9,11 @@ view: seoul_subway_ver2 {
     drill_fields: [detail*]
   }
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: CONCAT(${TABLE}.Date, ${TABLE}.Time, ${TABLE}.Type, ${TABLE}.Station) ;;
+  }
+
   dimension: date {
     type: date
     datatype: date
