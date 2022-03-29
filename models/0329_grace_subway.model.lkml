@@ -19,3 +19,11 @@ explore: seoul_subway {}
 explore: time {}
 
 explore: passenger {}
+
+explore: seoul_subway_ver2 {
+  join: calendar {
+    type: left_outer
+    sql_on: ${seoul_subway_ver2.date} = ${calendar.date_date} ;;
+    relationship: one_to_many
+  }
+}
