@@ -34,7 +34,9 @@ view: calendar {
     WHEN calendar.Day = '목요일'  THEN 4
     WHEN calendar.Day = '금요일'  THEN 5
     WHEN calendar.Day = '토요일'  THEN 6
-    WHEN calendar.Day = '일요일'  THEN 7;;
+    WHEN calendar.Day = '일요일'  THEN 7
+    ELSE '8'
+    END ;;
   }
 
 
