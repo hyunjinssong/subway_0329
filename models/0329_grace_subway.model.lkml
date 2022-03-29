@@ -31,4 +31,9 @@ explore: seoul_subway_ver2 {
     sql_on: ${seoul_subway_ver2.station} = ${station.stationcode} ;;
     relationship: one_to_many
   }
+  join: date_sum_plus {
+    type: left_outer
+    sql_on: ${seoul_subway_ver2.date} = ${date_sum_plus.calendar_date_date} ;;
+    relationship: one_to_many
+  }
 }
