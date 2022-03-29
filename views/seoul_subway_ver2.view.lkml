@@ -60,6 +60,35 @@ view: seoul_subway_ver2 {
     sql: ${TABLE}.Sub ;;
   }
 
+  dimension: comparsion {
+    type: number
+    value_format_name: percent_0
+    sql: ((${TABLE}.Plus)/
+    (${TABLE}.Plus
+WITH seoul_subway_ver2 AS (SELECT * FROM `mzcdsc-team-200716.Subway_0329.seoul_subway`
+      )
+SELECT
+    (seoul_subway_ver2.Date ) AS seoul_subway_ver2_date,
+    COALESCE(SUM(CAST(seoul_subway_ver2.Plus AS FLOAT64)), 0) AS plus_sum3
+FROM seoul_subway_ver2
+GROUP BY
+    1
+ORDER BY
+    2 DESC
+LIMIT 1
+    ) ;;
+
+
+
+    html: {% if value > 0 %}
+         <p style="color: #990000">▲  {{ rendered_value }}</p>
+      {% elsif value < 0 %}
+        <p style="color: #009900">▼  {{ rendered_value }}</p>
+      {% else %}
+        <p style="color: #000000">{{ rendered_value }}</p>
+      {% endif %} ;;
+  }
+
   set: detail {
     fields: [
       date,
