@@ -20,6 +20,8 @@ explore: time {}
 
 explore: passenger {}
 
+explore: dashboard2 {}
+
 explore: seoul_subway_ver2 {
   join: calendar {
     type: left_outer
