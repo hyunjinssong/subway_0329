@@ -56,9 +56,29 @@ view: dashboard2 {
   }
 
   measure: plus_2 {
+    label: "유동인원수"
     type: number
     sql: ${TABLE}.`In` + ${TABLE}.Out ;;
   }
+
+  measure: sub_2 {
+    label: "순수송인원수"
+    type: number
+    sql: abs(${TABLE}.`In` + ${TABLE}.Out) ;;
+  }
+
+  measure: divide {
+    label: "순승차비율수"
+    type: number
+    sql: ${sub_2} / ${plus_2} ;;
+  }
+
+  measure: divide_2 {
+    label: "순유동유입비율"
+    type: number
+    sql: abs( (out- in)/ (out+in)) ;;
+  }
+
 
   set: detail {
     fields: [
