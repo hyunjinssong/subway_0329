@@ -55,6 +55,11 @@ view: dashboard2 {
     sql: ${TABLE}.Sub ;;
   }
 
+  measure: plus_2 {
+    type: number
+    sql: ${TABLE}.`In` + ${TABLE}.Out ;;
+  }
+
   set: detail {
     fields: [
       date,
