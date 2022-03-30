@@ -76,7 +76,7 @@ view: dashboard2 {
   measure: divide_2 {
     label: "순유동유입비율"
     type: number
-    sql: abs( (out- in)/ (out+in)) ;;
+    sql: abs( (out- ${TABLE}.`In`)/ (out + ${TABLE}.`In`)) ;;
   }
 
 
