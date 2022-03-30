@@ -64,7 +64,7 @@ view: dashboard2 {
   measure: sub_2 {
     label: "순수송인원수"
     type: number
-    sql: abs(${TABLE}.`In` + ${TABLE}.Out) ;;
+    sql: abs(${TABLE}.`In` - ${TABLE}.Out) ;;
   }
 
   measure: divide {
