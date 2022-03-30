@@ -70,7 +70,7 @@ view: dashboard2 {
   measure: divide {
     label: "순승차비율수"
     type: number
-    sql: ${sub_2} / ${plus_2} ;;
+    sql: ${sub_2} / ${TABLE}.`In` ;;
   }
 
   measure: divide_2 {
