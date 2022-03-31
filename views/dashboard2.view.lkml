@@ -11,16 +11,19 @@ view: dashboard2 {
 
   dimension: date {
     type: date
+    label: "기준일자"
     datatype: date
     sql: ${TABLE}.Date ;;
   }
 
   dimension: time {
+    label: "시간대"
     type: number
     sql: ${TABLE}.Time ;;
   }
 
   dimension: linecode {
+    label: "호선"
     type: number
     sql: ${TABLE}.Linecode ;;
   }
