@@ -55,7 +55,7 @@ view: seoul_subway {
   dimension: case {
     type: string
     sql:
-    case when ${TABLE}.Time = (6 OR 7) then "출근시간"
+    case when ${TABLE}.Time = 6 then "출근시간"
     ELSE NULL
     END;;
   }
