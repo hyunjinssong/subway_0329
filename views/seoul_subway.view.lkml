@@ -52,6 +52,14 @@ view: seoul_subway {
     sql: ${TABLE}.Time ;;
   }
 
+  dimension: case {
+    type: number
+    sql: select *,
+    case when ${TABLE}.Time == 6 then 1
+    END as "hi"
+    ;;
+  }
+
   dimension: type {
     type: string
     sql: ${TABLE}.Type ;;
