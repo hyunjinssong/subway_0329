@@ -55,7 +55,7 @@ view: seoul_subway {
   dimension: case {
     type: number
     sql: (select
-    case when ${TABLE}.Time == 6 then 1
+    case when ${TABLE}.Time = 6 then 1
     ELSE NULL)
     ;;
   }
